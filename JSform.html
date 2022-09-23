@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+</head>
+<body>
+	<form name="myform" onsubmit=" return validateData()">
+		Name:<input type="text" name="uname" id="un"><br><br>
+		Mobile:<input type="text" name="mobile" ><br><br>
+		Email:<input type="text" name="eml" id="email"><br><br>
+		Address:<textarea cols="8" rows="4" name="add"></textarea><br><br>
+		<input type="submit"  value="Submit">
+	</form>
+
+	<script>
+		var alphaExp = /^[a-zA-Z\s]+$/;
+		var numExp=/^[0-9]*$/;
+		var alphaNumExp = /^[a-zA-Z0-9]+$/;
+		var alphaNumSpaceExp = /^[a-zA-Z0-9\s]+$/;
+		var alphaAddExp = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+		var emailExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;	
+
+		function validateData() {
+			var x=document.getElementById('un').value;
+		//var x=document.forms['myform']['uname'].value;
+		if(x=="")
+		{
+			alert("Please select FirstName");
+			document.getElementById('un').focus();
+			//document.forms['myform']['uname'].focus();
+			return false;
+		}
+		if(!x.match(alphaExp)){
+
+			alert("Your name should be character only.");
+			document.forms['myform']['uname'].focus();
+			return false;
+		}
+
+		var x=document.forms['myform']['mobile'].value;
+		if(x=="")
+		{
+			alert("Please select Mobile No.");
+			document.forms['myform']['mobile'].focus();
+			return false;
+		}
+		if(!x.match(numExp) || isNaN(x) )
+		{
+			alert("Your Mobile No. should be valid");
+			document.forms['myform']['mobile'].focus();
+			return false;
+		}
+		if( x.length<10 || x.length>12)
+		{
+			alert("Your Mobile No. should be between 10 to 12 in length");
+			document.forms['myform']['mobile'].focus();
+			return false;
+		}
+
+		var x=document.getElementById('email').value;
+		if(x=="")
+		{
+			alert("Please select Email Id");
+			document.forms['myform']['eml'].focus();
+			return false;
+		}
+		if(!x.match(emailExp))
+		{
+			alert("Email Id should be valid");
+			document.forms['myform']['eml'].focus();
+			return false;
+		}
+
+		var x = document.forms["myform"]["add"].value;
+		if (x == "") 
+		{
+			alert("Please select Addresss");
+			document.forms["myform"]["add"].focus();
+			return false;
+		}
+		if (!x.match(alphaAddExp))
+		{
+			alert("Error : Address should be valid");
+			document.forms["myform"]["add"].focus();
+			return false;
+		}
+	}
+</script>
+</body>
+</html>

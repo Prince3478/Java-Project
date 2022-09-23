@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form>
+	<b>Permanent Address</b>
+	<textarea name="permanent"></textarea><br>
+	
+<input type="checkbox" name="copy" onclick="fill(this.form)">
+<em>Check this box if Permanent Address and Current Address are the same.</em>
+<P>
+<b>Current Address</b>
+<textarea name="current"></textarea> 
+</form>
+
+<script>
+function fill(f) 
+{
+  if(f.copy.checked == true) 
+  {
+  	 
+       f.current.value = f.permanent.value;
+  }
+}
+</script>
+</body>
+</html>

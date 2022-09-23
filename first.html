@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- <h2>What Can JavaScript Do?</h2>
+       
+<p id="demo">My Date of birth.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "25/mar/1998"'>Click Me!</button> -->
+<!-- ///////////////////////////////////////////////////////////////// -->
+<!-- <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button> -->
+<!-- ////////////////////////////////////////////////////////////////// -->
+
+    
+<!-- <p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='30px'">Click Me!</button>
+ -->
+
+ <!-- <p id="demo">Jadu mantar gayab ho jaa .</p>
+
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>
+ -->
+<!-- ////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<!--  <p>JavaScript can show hidden HTML elements.</p>
+
+<p id="demo" style="display:none">Hello JavaScript!</p>
+
+<button type="button" onclick="console.log('demo').style.display='block'">Click Me!</button>
+
+function -->
+
+<!-- JS OUTPUT/DISPLAY SHOW 
+1.innerHTML
+2.document.write()
+3.window.alert()
+4.console.log() -->
+
+<!-- now first are used or example -->
+
+<!-- <p id="demo"></p>
+
+<script>
+	document.getElementById("demo").innerHTML=1+4;
+</script> -->
+
+ <!-- now second example starts  -->
+
+ <!-- <script>
+ 	
+ 	 document.write(3+4);
+
+</script> -->
+
+ 	<!-- <btton="button" onclick="document.write(5 + 6)">Try it</button> u -->
+
+ 	<!-- <button type="button" onclick="document.write(5 + 6)">Try it</button>
+ -->
+ 
+<!-- now third example are begins in an example --> 
+
+
+<!-- <script>
+	window.alert(5+9);
+</script> -->
+
+<!-- now fourth one is start example is here -->
+
+<!-- <script>
+	 console.log(70+53);
+
+</script> -->
+
+
+<!-- IMPROTANT THINGS ARE HERE.... -->
+
+ <!--   JavaScript Identifiers
+All JavaScript variables must be identified with unique names.
+
+These unique names are called identifiers. -->
+
+
+ <!--  JAVASCRIPT DATA TYPE
+
+
+<p id="demo"></p>
+
+<script>
+var p = 3.14;
+var son = "John Doe";
+var weR = 'Yes I am!';
+
+document.getElementById("demo").innerHTML =
+p + "<br>" + son + "<br>" + weR;
+</script> -->
+
+<!-- ////////////variables//////////<br>
+
+<b>variable is a temporary memory location which hold value of any type of data type
+like:-string,no.,etc.</b><br>
+<script>
+
+   var a=10;
+   var b=20;
+   var c=a+b;
+
+   document.write(c);
+
+</script> -->
+<!-- /////////////////conditional statement////////////
+
+Runs a block of code if something is true.</br>
+	.IF<br>
+	.IF ELSE<br>
+	.IF ELSE IF ELSE<br>
+	.NESTED IF<br>
+	In JavaScript we have the following conditional statements:
+
+.Use if to specify a block of code to be executed, if a specified condition is true...!<br>
+.Use else to specify a block of code to be executed, if the same condition is false...!<br>
+.Use else if to specify a new condition to test, if the first condition is false...!<br>
+.Use switch to select one of many blocks of code to be executed...!<br> -->
+
+
+	<!-- <script>
+		var a=3;
+		var b=6;
+		var c=2;
+		if (a>b)
+		{
+			document.write("true1");
+		}
+       else if (a>c)
+       {
+       	document.write("true2");
+       }
+
+   else{
+  document.write("false"); 	
+   }
+</script> -->
+
+<!-- ///////////nested if//////////////// -->
+
+<!-- <script>
+let a = 5, b = 62;
+[a, b] = [b, a];
+window.alert(`${a} ${b}`);    
+
+
+
+
+</script>
+ -->
+<!-- <form name="my form">
+	Name:<input type="text" name="user name" id="uname"><span id="u_small"></span></br></br>
+
+	<input type="submit">
+</form>
+
+
+<script>
+	// var alphaExp = /^[a-zA-Z\s]+$/;
+	// var alphaNumExp = /^[a-zA-Z0-9]+$/;
+	// var alphaNumSpaceExp = /^[a-zA-Z0-9\s]+$/;
+	// var alphaAddExp = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+	// var emailExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;	
+
+
+// document.myform.username.addEventListener("keyup", validatedata,false);
+	document.getElementById('uname').addEventListener("keyup", validatedata,false);
+		function validatedata() {
+
+			var ptrn = /^[a-zA-Z\s]+$/;
+			// if (ptrn.test(document.myform.username.value)) {
+			var uname=document.getElementById('uname').value;
+			if (ptrn.test(uname)) 
+			{
+					
+				document.getElementById("u_small").innerHTML = " Username is Valid";
+				document.getElementById("u_small").style.color = "green";
+			} 
+			else {
+				 //document.myform.username.style.backgroundColor = 'red';
+				document.getElementById("u_small").textContent = " *Username is Invalid";
+				document.getElementById("u_small").style.color = "red";
+			}
+		}
+</script> -->
+<form name="myform" onsubmit="return validatedata()">
+	Name:<input type="text" name="uname" id="un"><br></br>
+	Mobile:<input type="text" name="Mobile"><br><br>
+	Email:<input type="text" name="eml"
+	id="email"><br><br>
+	Address:<textarea cols="8" rows="4" name="add"></textarea><br><br>
+	<input type="submit" value="submit">
+
+</form>
+<script>
+	var alphaExp=/^[a-zA-Z\s]+$/;
+	var numExp=/^[0-9]*$/;
+	var alphaNumExp=/^[a-zA-Z0-9]+&/;
+	var alphaNumSpaceExp = /^[a-zA-Z0-9\s]+$/;
+    var alphaAddExp = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+    var emailExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+    function validation() {
+    	var x=document.getElementById('un').value;
+      
+      if (x=="") 
+      {
+      	alert("Please select firstName");
+      	document.getElementById('un').focus();
+      	return false;
+      }
+       
+      if (!x.match(alphaExp)){
+      	alert("Your name should be character only.")
+         
+         document.forms['myform'] ['uname'].focus();
+         return false;
+       }
+
+
+
+
+
+</script>
+</body>
+</html>
